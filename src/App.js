@@ -1,23 +1,54 @@
-import logo from './logo.svg';
-import './App.css';
+// import "./App.css"
+// import { useState, useEffect } from 'react'
+// const App = () => {
+//   const [val, setval] = useState(0)
+
+   
+//     useEffect(()=> {
+//       if( val >= 1) {
+//         document.title = `Chats (${val})`
+//       }
+//       else {
+//         document.title = `Chats`
+//       }
+//    }, [val])
+//   return (
+//     <div className='App'>
+//       <h1>Value = {val} 🔥</h1>
+//       <button onClick={ () => setval(val + 1)}>Increase +</button>
+//       <button onClick={ () => setval(val -1)}>Decrease -</button>
+//     </div>
+//   )
+
+
+// }
+
+// export default App
+
+
+import React, { useState } from 'react';
 
 function App() {
+const [input, setInput] = useState('')
+const [display, setDisplay] = useState('')
+ 
+
+let inputHandler = (event) => {
+    setInput(event.target.value)
+}
+
+let button = () => {
+  setDisplay((pre)=> pre + input + "\n")
+  
+}
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+     <input type='text' onChange={inputHandler}/>
+     <br/>
+     <br/>
+     <button onClick={button}>click</button>
+     <pre>{display}</pre>
     </div>
   );
 }
