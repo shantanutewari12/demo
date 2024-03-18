@@ -47,7 +47,7 @@ let button = () => {
      <input type='text' onChange={inputHandler}/>
      <br/>
      <br/>
-     <button onClick={button}>click here</button>
+     <button onClick={button}>click </button>
      <pre>{display}</pre>
     </div>
   );
